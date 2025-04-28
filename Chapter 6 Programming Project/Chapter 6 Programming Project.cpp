@@ -7,24 +7,19 @@ int calcPerimeter(int a, int b);
 
 int calcArea(int a, int b);
 
-//bool displayResults(int a, int b);
+void displayResults(int a, int b);
 
 
 int main()
 {
-    //int sideOne{}, sideTwo{}, rectPerimeter{}, rectArea{};
-    int testOne{}, testTwo{};
-    //cin >> testOne;
-    //cin >> testTwo;
-    getLength_Width(testOne,testTwo);
-    cout << calcPerimeter(testOne, testTwo);
-    cout << calcArea(testOne, testTwo);
-    //displayResults(calcPerimeter, calcArea);
+    int sideOne{}, sideTwo{};
+    getLength_Width(sideOne,sideTwo);
+    displayResults(calcPerimeter(sideOne,sideTwo), calcArea(sideOne,sideTwo));
     return 0;
 }
 
 void getLength_Width(int &a, int &b) {
-    cout << "Please enter the length and width of the rectangle ";
+    cout << "Please enter the length and width of the rectangle: ";
     cin >> a;
     cin >> b;
 };
@@ -38,8 +33,7 @@ int calcArea(int a, int b) {
     return (a * b);
 };
 
-/*bool displayResults(float a, float b) {
+void displayResults(int a, int b) {
     cout << "The perimeter of the rectangle is " << a << "\n";
     cout << "The area of the rectangle is " << b << endl;
-    return 0;
-};*/
+};
