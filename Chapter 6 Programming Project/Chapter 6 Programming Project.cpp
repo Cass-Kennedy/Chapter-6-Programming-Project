@@ -1,20 +1,45 @@
-// Chapter 6 Programming Project.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+using namespace std;
+
+void getLength_Width(int &a, int &b);
+
+int calcPerimeter(int a, int b);
+
+int calcArea(int a, int b);
+
+//bool displayResults(int a, int b);
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //int sideOne{}, sideTwo{}, rectPerimeter{}, rectArea{};
+    int testOne{}, testTwo{};
+    //cin >> testOne;
+    //cin >> testTwo;
+    getLength_Width(testOne,testTwo);
+    cout << calcPerimeter(testOne, testTwo);
+    cout << calcArea(testOne, testTwo);
+    //displayResults(calcPerimeter, calcArea);
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+void getLength_Width(int &a, int &b) {
+    cout << "Please enter the length and width of the rectangle ";
+    cin >> a;
+    cin >> b;
+};
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+int calcPerimeter(int a, int b) {
+    return (2 * a) + (2 * b);
+    
+};
+
+int calcArea(int a, int b) {
+    return (a * b);
+};
+
+/*bool displayResults(float a, float b) {
+    cout << "The perimeter of the rectangle is " << a << "\n";
+    cout << "The area of the rectangle is " << b << endl;
+    return 0;
+};*/
