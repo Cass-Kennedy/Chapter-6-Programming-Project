@@ -7,8 +7,6 @@ void getFarenheit(int &a, int &b);
 double calcCelsius(double a);
 
 void displayResults(int a, int b);
-int addition(int a, int b);
-
 
 int main()
 {
@@ -36,8 +34,4 @@ double calcCelsius(double a) {
 void displayResults(int a, int b) {
     cout << "Farenheit: " << a;
     cout << setw(14) << "Celsius: " << b << endl;
-};
-
-int addition(int a, int b) {
-    return a + b;
 };
