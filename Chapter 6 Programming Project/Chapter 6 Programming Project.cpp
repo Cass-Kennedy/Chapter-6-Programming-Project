@@ -1,39 +1,39 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
-void getLength_Width(int &a, int &b);
+void getFarenheit(int &a, int &b);
 
-int calcPerimeter(int a, int b);
-
-int calcArea(int a, int b);
+double calcCelsius(int a);
 
 void displayResults(int a, int b);
 
 
 int main()
 {
-    int sideOne{}, sideTwo{};
-    getLength_Width(sideOne,sideTwo);
-    displayResults(calcPerimeter(sideOne,sideTwo), calcArea(sideOne,sideTwo));
+    calcCelsius(212);
+    /*int farenheitInitial, farenheitIncrements, celsiusInitial;
+    cout << "This program makes a table that converts farenheit temperatures to celcius." << endl;
+    getFarenheit(farenheitInitial,farenheitIncrements);
+    while (farenheitInitial <= 20) {
+        celsiusInitial = calcCelsius(farenheitInitial);
+        displayResults(farenheitInitial, celsiusInitial);
+        farenheitInitial += farenheitIncrements;
+    };*/
     return 0;
 }
 
-void getLength_Width(int &a, int &b) {
-    cout << "Please enter the length and width of the rectangle: ";
+void getFarenheit(int &a, int &b) {
+    cout << "Please enter the first farenheit temperature and amount between rows: ";
     cin >> a;
     cin >> b;
 };
 
-int calcPerimeter(int a, int b) {
-    return (2 * a) + (2 * b);
-    
-};
-
-int calcArea(int a, int b) {
-    return (a * b);
+double calcCelsius(int a) {
+    return ((5 / 9) * (a - 32));
 };
 
 void displayResults(int a, int b) {
-    cout << "The perimeter of the rectangle is " << a << "\n";
-    cout << "The area of the rectangle is " << b << endl;
+    cout << "Farenheit: " << a;
+    cout << setw(14) << "Celsius: " << b << endl;
 };
