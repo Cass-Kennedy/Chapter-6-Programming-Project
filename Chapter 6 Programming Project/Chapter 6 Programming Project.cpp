@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void getLength_Width(int &a, int &b);
+void getScore(int &a, int &b);
 
 int calcPerimeter(int a, int b);
 
@@ -18,7 +18,7 @@ int main()
     return 0;
 }
 
-void getLength_Width(int &a, int &b) {
+void getScore(int &a, int &b) {
     cout << "Please enter the length and width of the rectangle: ";
     cin >> a;
     cin >> b;
