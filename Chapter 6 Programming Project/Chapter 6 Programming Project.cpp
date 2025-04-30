@@ -12,8 +12,15 @@ void displayResults(int a, int b);
 
 int main()
 {
-    int sideOne{}, sideTwo{};
-    getLength_Width(sideOne,sideTwo);
+    int sideOne, sideTwo;
+    sideOne = -1;
+    sideTwo = -1;
+    while (sideOne < 0 || sideTwo < 0) {
+        getLength_Width(sideOne, sideTwo);
+        if (sideOne < 0 || sideTwo < 0) {
+            cerr << "Please enter two positive side lengths. ";
+        };
+    }
     displayResults(calcPerimeter(sideOne,sideTwo), calcArea(sideOne,sideTwo));
     return 0;
 }
