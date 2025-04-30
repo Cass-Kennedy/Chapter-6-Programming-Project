@@ -18,6 +18,7 @@ string firstRegion, newRegion, saferRegion;
 regionInfo(firstRegion, firstAccident); //Gets the starting information
 inputValidation(firstAccident);
 regionInfo(newRegion, newAccident); //Gets the second set of information.
+inputValidation(newAccident);
 if (isLower(firstAccident, newAccident) || firstAccident == newAccident) { //These two if statements set the first safest statment.
     saferAccident = newAccident;
     saferRegion = newRegion;
