@@ -9,6 +9,8 @@ bool isHigher(double a, double b);
 
 double calcAverage(double a, int b, double c, double d);
 
+void inputValidation(double a);
+
 
 int main()
 {
@@ -16,12 +18,14 @@ int main()
     int counter;
     counter = 1;
     getScore(userScore);
+    inputValidation(userScore);
     minScore = userScore;
     maxScore = userScore;
     cumulativeScore = userScore;
     do {
-        cout << "Please enter your score: ";
+        cout << "Please enter another score: ";
         cin >> userScore;
+        inputValidation(userScore);
         if (isLower(userScore, minScore)) {
             minScore = userScore;
         };
@@ -58,4 +62,11 @@ bool isHigher (double a, double b) {
 
 double calcAverage(double a, int b, double c, double d) {
     return (a - (c + d)) / (b - 2);
+};
+
+void inputValidation(double a) {
+    while (a < 0) {
+        cout << "Please enter a positive score. ";
+        cin >> a;
+    }
 };
