@@ -1,3 +1,4 @@
+//Calculates the area and perimeter with user input side lengths.
 #include <iostream>
 using namespace std;
 
