@@ -7,6 +7,8 @@ bool isLower(int a, int b);
 
 void showLowest(string a, int b);
 
+void inputValidation(int a);
+
 int main()
 {
 int userEntry, firstAccident, newAccident, saferAccident;
@@ -14,8 +16,9 @@ userEntry = 0;
 string firstRegion, newRegion, saferRegion;
 cout << "Please enter the name of a region in your area: ";
 cin >> firstRegion;
-cout << "Please enter how many car crashes occured there last year ";
+cout << "Please enter how many car crashes occured there last year: ";
 cin >> firstAccident;
+inputValidation(firstAccident);
 cout << "Please enter another region's name ";
 cin >> newRegion;
 cout << "Please enter how many car crashes occured there last year ";
@@ -31,10 +34,11 @@ if (isLower(newAccident, firstAccident)) {
 cout << "\nWould you like to enter another region's information? 0 for no, 1 for yes. ";
 cin >> userEntry;
 while (userEntry != 0) {
-    cout << "Please enter the name of a regions in your area ";
+    cout << "Please enter the name of a region in your area ";
     cin >> newRegion;
     cout << "Please enter how many car crashes occured there last year ";
     cin >> newAccident;
+    inputValidation(newAccident);
     if (isLower(saferAccident, newAccident)) {
         saferRegion = newRegion;
         saferAccident = newAccident;
@@ -60,3 +64,10 @@ bool isLower(int a, int b) {
 void showLowest(string a, int b) {
     cout << a << " is the saftest region to drive because it has the lowest crash rate with " << b << " crashes last year.";
 };
+
+void inputValidation(int a) {
+    while (a < 0) {
+        cout << "Please enter a positive accident number. ";
+        cin >> a;
+    };
+}
