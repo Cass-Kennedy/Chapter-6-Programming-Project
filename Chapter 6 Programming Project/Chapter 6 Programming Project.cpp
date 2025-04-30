@@ -2,7 +2,7 @@
 #include <iomanip>
 using namespace std;
 
-void getFarenheit(int &a, int &b);
+void getfarhenheit(int &a, int &b);
 
 double calcCelsius(double a);
 
@@ -10,19 +10,23 @@ void displayResults(int a, int b);
 
 int main()
 {
-    int farenheitInitial, farenheitIncrements, celsiusInitial;
-    cout << "This program makes a table that converts farenheit temperatures to celcius." << endl;
-    getFarenheit(farenheitInitial,farenheitIncrements);
-    while (farenheitInitial <= 20) {
-        celsiusInitial = calcCelsius(farenheitInitial);
-        displayResults(farenheitInitial, celsiusInitial);
-        farenheitInitial += farenheitIncrements;
+    int farhenheitInitial, farhenheitIncrements, celsiusInitial;
+    cout << "This program makes a table that converts farhenheit temperatures to celcius." << endl;
+    getfarhenheit(farhenheitInitial,farhenheitIncrements);
+    while (farhenheitInitial >= 20 || farhenheitInitial <= 0) {
+        cout << "Please enter a starting value between 0 and 20. ";
+        cin >> farhenheitInitial;
+    }
+    while (farhenheitInitial <= 20 && farhenheitInitial >= 0) {
+        celsiusInitial = calcCelsius(farhenheitInitial);
+        displayResults(farhenheitInitial, celsiusInitial);
+        farhenheitInitial += farhenheitIncrements;
     };
     return 0;
 }
 
-void getFarenheit(int &a, int &b) {
-    cout << "Please enter the first farenheit temperature and amount between rows: ";
+void getfarhenheit(int &a, int &b) {
+    cout << "Please enter the first farhenheit temperature and amount between rows: ";
     cin >> a;
     cin >> b;
 };
@@ -32,6 +36,6 @@ double calcCelsius(double a) {
 };
 
 void displayResults(int a, int b) {
-    cout << "Farenheit: " << a;
+    cout << "farhenheit: " << a;
     cout << setw(14) << "Celsius: " << b << endl;
 };
