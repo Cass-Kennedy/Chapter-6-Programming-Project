@@ -3,7 +3,7 @@ using namespace std;
 
 void getLength_Width(int &a, int &b); //Function prototypes, see after main for the definitions.
 
-int calcPerimeter(int a, int b);
+int calcPerimeter(int a, int b); //These are ints rather than doubles because it didn't work for some reason.
 
 int calcArea(int a, int b);
 
