@@ -43,10 +43,9 @@ return 0;
 
 void regionInfo(string& a, int& b) { //Gets the region name from the user.
     static int counter;
-    counter = 1;
+    counter++;
     cout << "Please enter the name of the region " << counter << ": ";
     cin >> a;
-    counter++;
     cout << "Please enter the number of accidents: ";
     cin >> b;
 };
