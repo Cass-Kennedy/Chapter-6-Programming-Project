@@ -25,7 +25,7 @@ if (isLower(newAccident, firstAccident)) {
     saferAccident = firstAccident;
     saferRegion = firstRegion;
 };
-cout << "\nWould you like to enter another region's information? 0 for no, 1 for yes. "; //Meant to allow the user to enter however many regions as they want.
+cout << "Would you like to enter another region's information? 0 for no, 1 for yes. "; //Meant to allow the user to enter however many regions as they want.
 cin >> userEntry;
 while (userEntry != 0) {
     regionInfo(newRegion, newAccident);
@@ -34,7 +34,7 @@ while (userEntry != 0) {
         saferRegion = newRegion;
         saferAccident = newAccident;
     };
-    cout << "\nWould you like to enter another region's information? 0 for no, 1 for yes. ";
+    cout << "Would you like to enter another region's information? 0 for no, 1 for yes. ";
     cin >> userEntry;
 };
 showLowest(saferRegion, saferAccident); //Displays the overall results.
@@ -43,10 +43,10 @@ return 0;
 
 void regionInfo(string& a, int& b) { //Gets the region name from the user.
     static int counter;
-    counter++;
+    counter++; //Meant to display the region number.
     cout << "Please enter the name of the region " << counter << ": ";
-    cin >> a;
-    cout << "Please enter the number of accidents: ";
+    cin >> a; //Can't handle spaces. Getline breaks it otherwise.
+    cout << "Please enter the number of accidents: "; 
     cin >> b;
 };
 
