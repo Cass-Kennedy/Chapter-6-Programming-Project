@@ -1,3 +1,4 @@
+//Compares multiple regions and presents the safest one based on crash rates.
 #include <iostream>
 using namespace std;
 
